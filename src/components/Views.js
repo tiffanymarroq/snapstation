@@ -1,4 +1,6 @@
 import React,{ Component} from 'react';
+import { Modal } from 'reactstrap'
+
 
 
 
@@ -9,6 +11,7 @@ class Views extends Component{
             view:'startView',
             isOpen: false
         }
+        this.modalToggle = this.modalToggle.bind(this)
     }
     changeView = (view) => {
         this.setState({
@@ -31,19 +34,21 @@ class Views extends Component{
     render(){
         let { view } = this.state;
         let startView = (
-                    <div className="text">
-                        <h3 className="title">Welcome! </h3>
-                        <p>Ready to take your pic? Click the start button below.</p>
-                        <button onClick={ () => this.changeView("imageView")}>Start</button>
-                    </div>
+            <div className="text">
+                <h3 className="title">Welcome! </h3>
+                <p>Ready to take your pic? Click the start button below.</p>
+                <button onClick={ () => this.changeView("imageView")}>Start</button>
+            </div>
             )
         let imageView = 
             (
                 <div className="text">
                     <h3 className="title"></h3>
                     <p>Ready?</p>
-                    <button>Send to Friends</button>
-                    <br/>
+                    <div className="image-container">
+
+                    </div>
+                    <button onClick={this.modalToggle}>Send to Friends</button>
                     <br/>
                     <br/>
                     <button onClick={this.onRestart}>Restart</button>
@@ -61,6 +66,15 @@ class Views extends Component{
         }
         return(
             <div  style={{position:'relative',width:'100%',height:'100%'}}>
+                <Modal centered={true} isOpen={this.state.isOpen} toggle={this.modalToggle}>
+                    <p>Enter Yubico Key</p>
+                    <input/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <button>Send</button>
+                </Modal>
                 <div className={"text-center view flex flex-center " + view }>
                     {displayView}
                 </div>
