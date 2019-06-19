@@ -1,33 +1,78 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Paytone+One|Roboto&display=swap');
+
+.App{
+  width: 100vw;
+  height: 100vh;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* Default */
+
+.main-view{
+  width: 100%;
+  height: calc(100% - 80px);
+  position: relative;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title{
+  font-size: 36px;
+  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
+}
+p{
+  font-size: 18px;
+}
+
+button{
+  padding: 8px 15px;
+  text-decoration: none;
+  border: 0;
+  background: #4285F4;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.flex-center{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* Nav */
+.navbar{
+  background-color: #4285F4;
+}
+.navbar-brand{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.team-name{
+  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  display: inline-block;
+  padding-left:15px;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
 }
+
+.logo{
+  height: 50px;
+}
+
+
+/* Views */
+.start-view{
+  background-image: url('https://wallpaperplay.com/walls/full/a/f/5/76731.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80%;
+}
+
