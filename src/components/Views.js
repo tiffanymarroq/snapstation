@@ -9,37 +9,33 @@ class Views extends Component{
             view:'startView'
         }
     }
-
  
     render(){
         let { view } = this.state;
-        let startView = () => {
-            return(
-                <div className="text-center">
-                    <h3 className="title">Welcome! </h3>
-                    <p>Ready to take your pic? Click the start button below.</p>
-                    <button>Start</button>
+        let startView = (
+                <div className="text-center start-view view flex flex-center">
+                    <div className="text">
+                        <h3 className="title">Welcome! </h3>
+                        <p>Ready to take your pic? Click the start button below.</p>
+                        <button>Start</button>
+                    </div>
                 </div>
             )
-        }
-             
-        let displayView = () => {
-            if(view == 'startView'){
-                console.log('start')
-                return startView;
-            }else if(view == 'imageView'){
-                return startView;
-            }else if(view == 'finalView'){
-                return startView;
-            }else{
-               return null
-            }
-        }
 
+        let displayView;
+        if(view === 'startView'){
+            displayView = startView;
+        }else if(view === 'imageView'){
+            displayView = startView;
+        }else if(view === 'finalView'){
+            displayView = startView;
+        }else{
+            displayView = startView;
+        }
+        
         return(
-            <div>
+            <div  style={{position:'relative',width:'100%',height:'100%'}}>
                 {displayView}
-                <p>test</p>
             </div>
         )
     }

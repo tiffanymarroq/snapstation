@@ -16,9 +16,9 @@ function App() {
           </Nav>
         </Navbar>
       </header>
-      <Container className="main-view flex flex-center">
+      <div className="main-view ">
         <Views />
-      </Container>
+      </div>
     </div>
   );
 }
