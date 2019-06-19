@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import ImageRender from './ImageRender';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <ImageRender/>
     </div>
   );
 }
