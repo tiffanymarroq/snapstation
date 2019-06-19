@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Views from './components/Views';
 import {Nav, Navbar, Container, NavbarBrand} from 'reactstrap';
+import ImageRender from './ImageRender';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       </header>
       <div className="main-view ">
         <Views />
+        <ImageRender />
       </div>
     </div>
   );
