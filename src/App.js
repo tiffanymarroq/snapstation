@@ -1,11 +1,7 @@
 import React from 'react';
 import './App.css';
-<<<<<<< HEAD
 import Views from './components/Views';
 import {Nav, Navbar, Container, NavbarBrand} from 'reactstrap';
-=======
-import ImageRender from './ImageRender';
->>>>>>> canonAPI
 
 function App() {
   return (
@@ -20,13 +16,9 @@ function App() {
           </Nav>
         </Navbar>
       </header>
-<<<<<<< HEAD
       <div className="main-view ">
         <Views />
       </div>
-=======
-      <ImageRender/>
->>>>>>> canonAPI
     </div>
   );
 }
