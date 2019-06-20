@@ -19,7 +19,12 @@ function App() {
           </NavbarBrand>
             <div className="flex flex-center">
               <p>Powered By</p>
+              <div>
               <img className="canon-logo" src="http://pluspng.com/img-png/canon-logo-png--1200.png" alt=""/>  
+              <img className="yubico-logo" src="https://www.yubico.com/wp-content/uploads/2012/09/Yubico-Logo-Big.png" alt=""/>
+            
+              </div>
+            
             </div>  
         </Navbar>
       </header>
