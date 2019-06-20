@@ -15,14 +15,26 @@ class ImageRender extends Component{
 
     render(){
         let image1;
-        let image2;
-        let resp = Axios.get('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip').then(
+        let startShooting = Axios.post('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview', {
+            "liveviewsize": "medium", 
+            "cameradisplay": "on"
+        }).then((resp)=>{
+            console.log("liveview is on", resp.status)
+            Axios.get('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip').then(
                 function (resp){
                     console.log("flip check",resp.status);
-                    console.log("flip check",resp);
-                    return resp
+                    console.log("flip check",resp.data);
+                    image1 = resp;
                 })
-        return <div>Images: <img src={resp}/></div>
-        }}
+            })
+        startShooting.then((resp)=>{
+            console.log(resp)})
+        
+        return (
+            <div>Images: <img src={image1}/></div>
+        )
+    }
+
+}
 
 export default ImageRender;
