@@ -30,6 +30,15 @@ class Views extends Component{
             isOpen: !this.state.isOpen
         })
     }
+
+    onSubmit = () => {
+        setTimeout(()=>{
+            this.setState({
+                view: 'startView',
+                isOpen: false
+            })
+        },3000)
+    }
  
     render(){
         let { view } = this.state;
@@ -73,7 +82,7 @@ class Views extends Component{
                     <br/>
                     <br/>
 
-                    <button>Send</button>
+                    <button onClick={this.onSubmit}>Send</button>
                 </Modal>
                 <div className={"text-center view flex flex-center " + view }>
                     {displayView}
