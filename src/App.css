@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Paytone+One|Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Paytone+One|Roboto&display=swap");
 
 .App {
   width: 100%;
   height: 100vh;
-
 }
 
 /* Default */
@@ -12,44 +11,40 @@
   width: 100%;
   height: calc(100% - 112px);
   position: relative;
-
 }
 
 .title {
   font-size: 48px;
-  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
-  text-shadow: 1px 1px 15px rgba(0, 0, 0, .7);
-  letter-spacing: .8px;
+  font-family: "Paytone One", Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.8px;
 }
-
 
 p {
   font-size: 24px;
-
 }
 
 .view-text {
-  text-shadow: 1px 1px 20px rgba(0, 0, 0, .8);
-
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
 button {
   padding: 8px 40px;
   text-decoration: none;
   border: 0;
-  background-color: #4285F4;
+  background-color: #4285f4;
   color: #fff;
   border-radius: 6px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 16px;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, .8);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
   text-align: center;
 }
 
 button:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 button:focus {
@@ -69,10 +64,9 @@ button:focus {
   align-items: center;
 }
 
-
 /* Nav */
 .navbar {
-  background-color: #4285F4;
+  background-color: #4285f4;
 }
 
 .navbar p {
@@ -90,13 +84,13 @@ button:focus {
 }
 
 .team-name {
-  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
+  font-family: "Paytone One", Arial, Helvetica, sans-serif;
   font-size: 36px;
   display: inline-block;
   color: #fff;
   line-height: 0;
   margin: 0;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .logo {
@@ -104,25 +98,22 @@ button:focus {
 }
 
 .canon-logo {
-  opacity: .87;
+  opacity: 0.87;
   margin-bottom: 10px;
   margin-left: 5px;
   width: 80px;
 }
 
-
 /* Views */
 .text {
   position: relative;
   z-index: 2;
-  text-shadow: 1px 1px 15px rgba(0, 0, 0, .5);
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
   transition: 1.25s ease-out;
-
-
 }
 
 .startView {
-  background-image: url('/assets/eiffelTower.jpg');
+  background-image: url("/assets/eiffelTower.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 80% 100%;
@@ -130,7 +121,7 @@ button:focus {
 }
 
 .imageView {
-  background-image: url('/assets/tajMahal.jpg');
+  background-image: url("/assets/tajMahal.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 10;
@@ -146,31 +137,30 @@ button:focus {
 
 .view:after {
   z-index: 1;
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 144, 163, .25)
+  background-color: rgba(255, 144, 163, 0.25);
 }
 
 .image-container {
   width: 500px;
   height: 300px;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 20px 0;
-  text-shadow: 1px 1px 15px rgba(0, 0, 0, .5);
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
 }
-
 
 /* Modal */
 
 .modal-title {
   font-size: 22px;
-  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
-  letter-spacing: .8px;
+  font-family: "Paytone One", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.8px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -189,7 +179,7 @@ button:focus {
   width: 200px;
   margin: auto;
   transition: 1s ease-out;
-  margin-top:30px;
+  margin-top: 30px;
   box-shadow: none;
 }
 
@@ -197,13 +187,12 @@ button:focus {
   width: 80%;
   background-color: #333;
   position: relative;
-  transition: .45s ease-out;
+  transition: 0.45s ease-out;
   border-radius: 3px;
-
 }
 
 .success-btn {
-  background-color: rgba(255, 144, 163, .8);
+  background-color: rgba(255, 144, 163, 0.8);
   display: block;
 }
 
@@ -211,10 +200,10 @@ button:focus {
   0% {
     width: 0;
   }
-  75%{
+  75% {
     width: 75%;
   }
-  95%{
+  95% {
     width: 75%;
   }
   100% {
@@ -222,15 +211,15 @@ button:focus {
   }
 }
 
-.load-btn:after{
-  content: '';
+.load-btn:after {
+  content: "";
   background-color: rgba(255, 144, 163, 1);
   position: absolute;
   height: 100%;
   top: 0;
   left: 0;
-  transition: .5s ease-out;
-  animation: loadBar 2s forwards ease-out ;
-  animation-delay: .8s;
+  transition: 0.5s ease-out;
+  animation: loadBar 2s forwards ease-out;
+  animation-delay: 0.8s;
   border-radius: 3px;
 }
