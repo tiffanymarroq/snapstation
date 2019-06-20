@@ -1,5 +1,5 @@
 import React,{ Component} from 'react';
-import { Modal } from 'reactstrap'
+import { Modal , Form} from 'reactstrap'
 
 
 
@@ -36,7 +36,8 @@ class Views extends Component{
         })
     }
 
-    onSubmit = () => {
+    onSubmit = (e) => {
+        e.preventDefault();
         this.setState({
             loading: true
         })
@@ -112,22 +113,28 @@ class Views extends Component{
                    : 
                    <div style={{flexDirection:'column'}} className="flex">
                        <p className="modal-title">Enter Yubico Key</p>
+                        <Form
+                                onSubmit={this.onSubmit} 
+                        
+                        >
                             <input 
-                                className={isUser ? 'user-valid' : 'user-invalid'} 
-                                type="password" 
-                                placeholder="key" 
-                                name="userCode"
-                                onChange={this.checkUser} />
-                        <button 
-                            disabled={isUser ? false : true }
-                            onClick={this.onSubmit} 
-                            className={"submit-btn " + (isUser ? "" : "disabled-btn") + (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
-                            {success ?
-                                "Success!"
-                            : <span> { loading ? "": "Send"}</span>
-                            
-                            }
-                        </button>
+                                    className={isUser ? 'user-valid' : 'user-invalid'} 
+                                    type="password" 
+                                    placeholder="key" 
+                                    name="userCode"
+                                    onChange={this.checkUser} />
+                                    <br></br>
+                            <button 
+                                disabled={isUser ? false : true }
+                                className={"submit-btn " + (isUser ? "" : "disabled-btn") + (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
+                                {success ?
+                                    "Success!"
+                                : <span> { loading ? "": "Send"}</span>
+                                
+                                }
+                            </button>
+                        </Form>
+                           
                    </div>
 
                    } 

@@ -191,6 +191,7 @@ button:focus {
   transition: 1s ease-out;
   margin-top:30px;
   box-shadow: none;
+  display: block;
 }
 
 .load-btn {
@@ -255,3 +256,13 @@ input{
 /* input.user-invalid{
   border: 1px solid red;
 } */
+
+
+
+form{
+  margin: auto;
+}
+
+input{
+  margin: auto
+}
