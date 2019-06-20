@@ -98,7 +98,12 @@ class Views extends Component {
     }
     return (
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
-        <Modal centered={true} isOpen={isOpen} toggle={this.modalToggle}>
+        <Modal
+          centered={true}
+          isOpen={isOpen}
+          toggle={this.modalToggle}
+          autoFocus={false}
+        >
           {success ? (
             <div>
               <p className="modal-title">Thank you!</p>
@@ -118,7 +123,7 @@ class Views extends Component {
                   className={isUser ? "user-valid" : "user-invalid"}
                   type="password"
                   placeholder="key"
-                  autofocus="autofocus"
+                  autoFocus
                   name="userCode"
                   onChange={this.checkUser}
                 />
