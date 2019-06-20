@@ -116,6 +116,8 @@ button:focus {
   position: relative;
   z-index: 2;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, .5);
+  transition: 1.25s ease-out;
+
 
 }
 
@@ -187,6 +189,8 @@ button:focus {
   width: 200px;
   margin: auto;
   transition: 1s ease-out;
+  margin-top:30px;
+  box-shadow: none;
 }
 
 .load-btn {
@@ -200,6 +204,7 @@ button:focus {
 
 .success-btn {
   background-color: rgba(255, 144, 163, .8);
+  display: block;
 }
 
 @keyframes loadBar {
@@ -225,7 +230,7 @@ button:focus {
   top: 0;
   left: 0;
   transition: .5s ease-out;
-  animation: loadBar 1.5s forwards ease-out ;
+  animation: loadBar 2s forwards ease-out ;
   animation-delay: .8s;
   border-radius: 3px;
 }

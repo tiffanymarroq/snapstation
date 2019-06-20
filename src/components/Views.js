@@ -42,14 +42,14 @@ class Views extends Component{
                 loading: false,
                 success: true
             })
-        },2500)
+        },3200)
         setTimeout(()=>{
             this.setState({
                 view: 'startView',
                 isOpen: false,
                 success: false
             })
-        },5000)
+        },6000)
     }
  
     render(){
@@ -70,7 +70,6 @@ class Views extends Component{
                     <button onClick={this.modalToggle}>Send to Friends</button>
                     <br/>
                     <br/>
-
                     <button className="invert-btn" onClick={this.onRestart}>Restart</button>
                 </div>
             )
@@ -85,17 +84,32 @@ class Views extends Component{
         return(
             <div  style={{position:'relative',width:'100%',height:'100%'}}>
                 <Modal centered={true} isOpen={isOpen} toggle={this.modalToggle}>
-                    <p className="modal-title">Enter Yubico Key</p>
-                    <input placeholder="key"/>
-                    <button 
-                        onClick={this.onSubmit} 
-                        className={"submit-btn " +  (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
-                        {success ?
-                            "Success!"
-                        : <span> { loading ? "": "Send"}</span>
-                        
-                        }
-                    </button>
+                   { success ? 
+                   <div>
+                       
+                       <p className="modal-title">Thank you!</p>
+                       <p className="text-center" style={{fontSize: "16px", margin:"0"}}>Your images have been sent.</p>
+                       <button className="submit-btn success-btn">Success!</button>
+
+                   </div>
+                       
+
+                   : 
+                   <div style={{flexDirection:'column'}} className="flex">
+                       <p className="modal-title">Enter Yubico Key</p>
+                        <input placeholder="key"/>
+                        <button 
+                            onClick={this.onSubmit} 
+                            className={"submit-btn " +  (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
+                            {success ?
+                                "Success!"
+                            : <span> { loading ? "": "Send"}</span>
+                            
+                            }
+                        </button>
+                   </div>
+
+                   } 
                 </Modal>
                 <div className={"text-center view flex flex-center " + view }>
                     {displayView}
