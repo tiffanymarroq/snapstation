@@ -199,7 +199,6 @@ button:focus {
   position: relative;
   transition: .45s ease-out;
   border-radius: 3px;
-
 }
 
 .success-btn {
@@ -232,5 +231,5 @@ button:focus {
   transition: .5s ease-out;
   animation: loadBar 2s forwards ease-out ;
   animation-delay: .8s;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
