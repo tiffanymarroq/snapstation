@@ -143,6 +143,14 @@ class Views extends Component {
                   {success ? "Success!" : <span> {loading ? "" : "Send"}</span>}
                 </button>
               </Form>
+            
+                <div className="flex " style={{marginTop:"30px"}}>
+                  <p style={{marginBottom:"10px", marginLRight:"10px", fontSize:'16px'}} className="text-center">Secured By</p>
+                  <div style={{marginLeft: '5px'}}>
+                  <img className="yubico-logo" src="/assets/yubico.png" alt="yubico"/>
+
+                  </div>
+                </div>
             </div>
           )}
         </Modal>

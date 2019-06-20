@@ -18,19 +18,10 @@ function App() {
             
           </NavbarBrand>
             <div className=" flex flex-center">
-              {/* <div style={{marginTop:'20px'}}> */}
-                <div className="">
-                  < p style={{marginTop:'6.5px'}}className="text-center">Powered By</p>
+              < p style={{marginTop:'6.5px'}}className="text-center">Powered By</p>
+              <div>
                   <img className="canon-logo" src="/assets/canon.png" alt="canon"/>  
-                </div>
-                <div></div>
-                <div>
-                  <p style={{marginBottom:"10px"}} className="text-center">Secured By</p>
-                  <img className="yubico-logo" src="/assets/yubico.png" alt="yubico"/>
-                </div>
-                
-              {/* </div> */}
-            
+              </div>
             </div>  
         </Navbar>
       </header>
