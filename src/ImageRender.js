@@ -6,7 +6,7 @@ class ImageRender extends Component{
     constructor(props){
         super(props);
         this.state = {
-            image: "assets/tajMahal.jpg"
+            image: "/assets/tajMahal.jpg"
         }
     }
 
@@ -15,28 +15,14 @@ class ImageRender extends Component{
 
     render(){
         let image1;
-        let startShooting = Axios.post('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview', {
-            "liveviewsize": "medium", 
-            "cameradisplay": "on"
-        }).then((resp)=>{
-            console.log("liveview is on", resp.status)
-            Axios.get('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip').then(
+        let image2;
+        let resp = Axios.get('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip').then(
                 function (resp){
                     console.log("flip check",resp.status);
-                    let b64Response = resp.data;
-                    let outputImg = document.createElement('img');
-                    outputImg.src = b64Response;
-                    image1 = outputImg;
+                    console.log("flip check",resp);
+                    return resp
                 })
-            })
-        startShooting.then((resp)=>{
-            console.log(resp)})
-        
-        return (
-            <img src="http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip"/>
-        )
-    }
-
-}
+        return <div>Images: <img src={resp}/></div>
+        }}
 
 export default ImageRender;
