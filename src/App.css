@@ -233,3 +233,25 @@ button:focus {
   animation-delay: .8s;
   /* border-radius: 3px; */
 }
+
+.disabled-btn{
+  background-color: rgba(0, 0, 0, .5);
+  transition: 1s ease-out;
+}
+
+/* User Auth */
+
+input.user-valid{
+  border: 1px solid #4285F4;
+}
+input{
+  padding: 5px 20px;
+  border-radius: 3px;
+  outline: none;
+  margin: 0;
+  border: 2px solid rgba(0, 0, 0, .5); 
+}
+
+/* input.user-invalid{
+  border: 1px solid red;
+} */

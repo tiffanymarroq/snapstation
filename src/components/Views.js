@@ -11,9 +11,12 @@ class Views extends Component{
             view:'startView',
             isOpen: false,
             loading: false,
-            success: false
+            success: false,
+            isUser: false,
+            code:'12345'
         }
         this.modalToggle = this.modalToggle.bind(this)
+        this.checkUser = this.checkUser.bind(this);
     }
     changeView = (view) => {
         this.setState({
@@ -45,16 +48,31 @@ class Views extends Component{
         },3200)
         setTimeout(()=>{
             this.setState({
-
                 view: 'startView',
                 isOpen: false,
-                success: false
+                success: false,
+                isUser: false
             })
         },6000)
     }
+
+    checkUser = (e) => {
+        console.log(e.target.value)
+        console.log(this.state.code)
+        if(this.state.code === e.target.value){
+            this.setState({
+                isUser: true
+            })
+        }else{
+            this.setState({
+                isUser: false
+            })
+        }
+        console.log(this.state.isUser)
+    }
  
     render(){
-        let { view, isOpen,loading,success } = this.state;
+        let { view, isOpen, loading, success, isUser } = this.state;
         let startView = (
             <div className="text">
                 <h3 className="title">Welcome! </h3>
@@ -87,21 +105,23 @@ class Views extends Component{
                 <Modal centered={true} isOpen={isOpen} toggle={this.modalToggle}>
                    { success ? 
                    <div>
-                       
                        <p className="modal-title">Thank you!</p>
                        <p className="text-center" style={{fontSize: "16px", margin:"0"}}>Your images have been sent.</p>
                        <button className="submit-btn success-btn">Success!</button>
-
                    </div>
-                       
-
                    : 
                    <div style={{flexDirection:'column'}} className="flex">
                        <p className="modal-title">Enter Yubico Key</p>
-                        <input placeholder="key"/>
+                            <input 
+                                className={isUser ? 'user-valid' : 'user-invalid'} 
+                                type="password" 
+                                placeholder="key" 
+                                name="userCode"
+                                onChange={this.checkUser} />
                         <button 
+                            disabled={isUser ? false : true }
                             onClick={this.onSubmit} 
-                            className={"submit-btn " +  (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
+                            className={"submit-btn " + (isUser ? "" : "disabled-btn") + (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
                             {success ?
                                 "Success!"
                             : <span> { loading ? "": "Send"}</span>
