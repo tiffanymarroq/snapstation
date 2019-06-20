@@ -45,6 +45,7 @@ class Views extends Component{
         },3200)
         setTimeout(()=>{
             this.setState({
+
                 view: 'startView',
                 isOpen: false,
                 success: false
