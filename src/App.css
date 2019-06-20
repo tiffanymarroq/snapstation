@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Paytone+One|Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Paytone+One|Roboto&display=swap'); */
+@import '/assets/fonts/paytone/paytone.css';
+@import '/assets/fonts/roboto/roboto.css';
 
 .App {
   width: 100%;

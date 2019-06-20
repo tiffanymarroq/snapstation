@@ -6,7 +6,7 @@ class ImageRender extends Component{
     constructor(props){
         super(props);
         this.state = {
-            image: "/assets/tajMahal.jpg"
+            image: "assets/tajMahal.jpg"
         }
     }
 
