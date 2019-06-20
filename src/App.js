@@ -25,7 +25,6 @@ function App() {
       </header>
       <div className="main-view ">
         <Views />
-        <ImageRender />
       </div>
     </div>
   );
