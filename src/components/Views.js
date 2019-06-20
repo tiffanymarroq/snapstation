@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Modal, Form } from "reactstrap";
+import ImageRender from '../ImageRender';
 
 class Views extends Component {
   constructor(props) {
@@ -79,7 +80,9 @@ class Views extends Component {
     let imageView = (
       <div className={"text " + (isOpen ? "mx-r-15" : "")}>
         <h3 className="title" />
-        <div className="image-container" />
+        <div className="image-container" >
+            <ImageRender />
+        </div>
         <button onClick={this.modalToggle}>Send to Friends</button>
         <br />
         <br />
@@ -98,7 +101,12 @@ class Views extends Component {
     }
     return (
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
-        <Modal centered={true} isOpen={isOpen} toggle={this.modalToggle}>
+        <Modal
+          centered={true}
+          isOpen={isOpen}
+          toggle={this.modalToggle}
+          autoFocus={false}
+        >
           {success ? (
             <div>
               <p className="modal-title">Thank you!</p>
@@ -118,7 +126,7 @@ class Views extends Component {
                   className={isUser ? "user-valid" : "user-invalid"}
                   type="password"
                   placeholder="key"
-                  autofocus="autofocus"
+                  autoFocus
                   name="userCode"
                   onChange={this.checkUser}
                 />
