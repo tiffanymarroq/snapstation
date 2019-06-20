@@ -9,7 +9,9 @@ class Views extends Component{
         super(props);
         this.state={
             view:'startView',
-            isOpen: false
+            isOpen: false,
+            loading: false,
+            success: false
         }
         this.modalToggle = this.modalToggle.bind(this)
     }
@@ -32,16 +34,26 @@ class Views extends Component{
     }
 
     onSubmit = () => {
+        this.setState({
+            loading: true
+        })
+        setTimeout(()=>{
+            this.setState({
+                loading: false,
+                success: true
+            })
+        },2500)
         setTimeout(()=>{
             this.setState({
                 view: 'startView',
-                isOpen: false
+                isOpen: false,
+                success: false
             })
-        },3000)
+        },5000)
     }
  
     render(){
-        let { view } = this.state;
+        let { view, isOpen,loading,success } = this.state;
         let startView = (
             <div className="text">
                 <h3 className="title">Welcome! </h3>
@@ -51,16 +63,15 @@ class Views extends Component{
             )
         let imageView = 
             (
-                <div className="text">
+                <div className={"text " + (isOpen ? "mx-r-15" : "")}>
                     <h3 className="title"></h3>
-                    <p>Ready?</p>
                     <div className="image-container">
-
                     </div>
                     <button onClick={this.modalToggle}>Send to Friends</button>
                     <br/>
                     <br/>
-                    <button onClick={this.onRestart}>Restart</button>
+
+                    <button className="invert-btn" onClick={this.onRestart}>Restart</button>
                 </div>
             )
         let displayView;
@@ -68,21 +79,23 @@ class Views extends Component{
             displayView = startView;
         }else if(view === 'imageView'){
             displayView = imageView;
-        }else if(view === 'finalView'){
-            displayView = startView;
         }else{
             displayView = startView;
         }
         return(
             <div  style={{position:'relative',width:'100%',height:'100%'}}>
-                <Modal centered={true} isOpen={this.state.isOpen} toggle={this.modalToggle}>
-                    <p>Enter Yubico Key</p>
-                    <input/>
-                    <br/>
-                    <br/>
-                    <br/>
-
-                    <button onClick={this.onSubmit}>Send</button>
+                <Modal centered={true} isOpen={isOpen} toggle={this.modalToggle}>
+                    <p className="modal-title">Enter Yubico Key</p>
+                    <input placeholder="key"/>
+                    <button 
+                        onClick={this.onSubmit} 
+                        className={"submit-btn " +  (loading ? 'load-btn ': "") + (success ? 'success-btn' :"")}>
+                        {success ?
+                            "Success!"
+                        : <span> { loading ? "": "Send"}</span>
+                        
+                        }
+                    </button>
                 </Modal>
                 <div className={"text-center view flex flex-center " + view }>
                     {displayView}
