@@ -23,15 +23,17 @@ class ImageRender extends Component{
             Axios.get('http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip').then(
                 function (resp){
                     console.log("flip check",resp.status);
-                    console.log("flip check",resp.data);
-                    image1 = resp;
+                    let b64Response = resp.data;
+                    let outputImg = document.createElement('img');
+                    outputImg.src = b64Response;
+                    image1 = outputImg;
                 })
             })
         startShooting.then((resp)=>{
             console.log(resp)})
         
         return (
-            <div>Images: <img src={image1}/></div>
+            <img src="http://192.168.1.2:30011/ccapi/ver100/shooting/liveview/flip"/>
         )
     }
 
