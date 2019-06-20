@@ -46,7 +46,7 @@ class Views extends Component{
                 loading: false,
                 success: true
             })
-        },3200)
+        },3300)
         setTimeout(()=>{
             this.setState({
                 view: 'startView',

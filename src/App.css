@@ -110,15 +110,12 @@ button:focus {
   width: 80px;
 }
 
-
 /* Views */
 .text {
   position: relative;
   z-index: 2;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, .5);
   transition: 1.25s ease-out;
-
-
 }
 
 .startView {
