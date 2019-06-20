@@ -58,8 +58,6 @@ class Views extends Component{
     }
 
     checkUser = (e) => {
-        console.log(e.target.value)
-        console.log(this.state.code)
         if(this.state.code === e.target.value){
             this.setState({
                 isUser: true

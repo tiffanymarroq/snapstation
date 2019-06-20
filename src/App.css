@@ -168,7 +168,7 @@ button:focus {
 /* Modal */
 
 .modal-title {
-  font-size: 22px;
+  font-size: 28px;
   font-family: 'Paytone One', Arial, Helvetica, sans-serif;
   letter-spacing: .8px;
   text-align: center;
@@ -195,7 +195,7 @@ button:focus {
 }
 
 .load-btn {
-  width: 80%;
+  width: 250px;
   background-color: #333;
   position: relative;
   transition: .45s ease-out;
@@ -251,6 +251,7 @@ input{
   outline: none;
   margin: 0;
   border: 2px solid rgba(0, 0, 0, .5); 
+  width: 250px;
 }
 
 /* input.user-invalid{
