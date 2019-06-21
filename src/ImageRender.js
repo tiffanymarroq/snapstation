@@ -22,7 +22,10 @@ class ImageRender extends Component{
                     console.log("flip check",resp);
                     return resp
                 })
-        return <div>Images: <img src={resp}/></div>
+        // With the Canon API, uncomment below
+        // return <div>Images: <img src={resp}/></div>
+
+        return <div><img src={this.state.image}/> </div>
         }}
 
 export default ImageRender;

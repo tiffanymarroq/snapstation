@@ -147,8 +147,7 @@ class Views extends Component {
                 <div className="flex " style={{marginTop:"30px"}}>
                   <p style={{marginBottom:"10px", marginLRight:"10px", fontSize:'16px'}} className="text-center">Secured By</p>
                   <div style={{marginLeft: '5px'}}>
-                  <img className="yubico-logo" src="/assets/yubico.png" alt="yubico"/>
-
+                    <img className="yubico-logo" src="/assets/yubico.png" alt="yubico"/>
                   </div>
                 </div>
             </div>
